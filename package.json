@@ -1,9 +1,9 @@
 {
   "name": "portfolio-alex",
+  "homepage": "https://mralex2309.github.io/portfolio-alex/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://mralex2309.github.io/portfolio-alex/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
