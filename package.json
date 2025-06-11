@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://MrAlex2309.github.io/portfolio-alex/",
+  "homepage": "https://mralex2309.github.io/portfolio-alex",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
