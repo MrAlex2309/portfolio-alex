@@ -43,5 +43,5 @@ export default defineConfig({
          },
        }),
      ],
-     base: '/portfolio-alex/'
+     base: '/portfolio-alex'
 })
