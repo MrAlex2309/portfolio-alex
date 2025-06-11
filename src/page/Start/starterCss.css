@@ -1,0 +1,16 @@
+.typing {
+  overflow: hidden; /* Hide the overflowing characters */
+  white-space: nowrap; /* Prevent text from wrapping */
+  border-right: .10em solid #ffffff; /* Blinking cursor effect */
+  animation: typing 3s steps(13, end) forwards, /* Typing animation */
+             blinking-cursor .75s step-end infinite alternate; /* Blinking cursor */
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 13ch } /* Adjust width based on text length */
+}
+
+@keyframes blinking-cursor {
+  from, to { border-color: transparent }
+  50% { border-color: hsl(0, 0%, 100%); }
+}
