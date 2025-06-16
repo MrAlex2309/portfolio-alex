@@ -9,6 +9,7 @@ import { CiViewTable } from "react-icons/ci";
 import { PiListPlusBold } from "react-icons/pi";
 import { SlEnvelopeOpen } from "react-icons/sl";
 import { IoIosPeople } from "react-icons/io";
+import { useState } from 'react';
 
 function HomePage() {
 
@@ -70,9 +71,7 @@ function HomePage() {
                 <p className='border rounded-3 bg-white mb-0' style={{padding:'2px'}}>JUN</p>
                 <p className='mb-0 text-center text-white fw-bold'>4</p>
               </div>
-              <button className='btn btn-white border rounded-circle p-2 position-relative shadow bg-white' style={{width:'70px'}} onClick={()=>{    
-
-              }}>
+              <button className='btn btn-white border rounded-circle p-2 position-relative shadow bg-white' style={{width:'70px'}} onClick={handleClick}>
                 <MdOutlineTouchApp className='position-absolute top-50 start-50 translate-middle text-success' style={{fontSize:"40px"}}/>
               </button>
           </div>
