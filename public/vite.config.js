@@ -10,7 +10,8 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["favicon.svg", "robots.txt"],
       manifest: {
-        scope: "/portfolio-alex/",
+        start_url: "/",
+        scope: "/",
         name: "My Portfolio",
         display:"standalone",
         short_name: "Portfolio",
