@@ -34,7 +34,9 @@ function HomePage() {
       Notification.requestPermission().then(permission=>{
         const uniqueTag = 'vibration-sample-' + Date.now();
         if(permission === "granted"){
-          new Notification("Hi There")
+          new Notification("Hi There",{
+            tag:"Hello"+Date.now()
+          })
         }
       })
     }
