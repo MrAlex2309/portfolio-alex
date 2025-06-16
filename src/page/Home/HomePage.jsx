@@ -9,7 +9,6 @@ import { CiViewTable } from "react-icons/ci";
 import { PiListPlusBold } from "react-icons/pi";
 import { SlEnvelopeOpen } from "react-icons/sl";
 import { IoIosPeople } from "react-icons/io";
-import { requestNotificationPermission } from '../../main';
 
 function HomePage() {
 
@@ -35,7 +34,7 @@ function HomePage() {
         <div className='container mt-5 d-flex align-items-center'>
             <img src={profile} alt="" style={{borderRadius:"50%", width:"80px", border:"1px solid green"}}/>
             <div className='ms-2'>
-              <h5 className='mb-0'>Songheack Chanratanak</h5>
+              <h5 className='mb-0'>Songheak Chanratanak</h5>
               <p className='mb-0'>IT Officer</p>
             </div>
         </div>
@@ -52,11 +51,19 @@ function HomePage() {
                 <p className='border rounded-3 bg-white mb-0' style={{padding:'2px'}}>JUN</p>
                 <p className='mb-0 text-center text-white fw-bold'>4</p>
               </div>
-              <div className='border rounded-circle p-2 position-relative shadow bg-white' style={{width:'70px'}} onClick={()=>{
-                requestNotificationPermission()
+              <button className='btn btn-white border rounded-circle p-2 position-relative shadow bg-white' style={{width:'70px'}} onClick={()=>{
+                if ('Notification' in window && 'serviceWorker' in navigator) {
+    Notification.requestPermission().then(permission => {
+      if (permission === 'granted') {
+        new Notification("Hello world")
+      } else {
+        console.log("Notifications permission denied.");
+      }
+    });
+  }
               }}>
                 <MdOutlineTouchApp className='position-absolute top-50 start-50 translate-middle text-success' style={{fontSize:"40px"}}/>
-              </div>
+              </button>
           </div>
       </div>
           <div style={{height:'75vh', backgroundColor:'whitesmoke'}}>

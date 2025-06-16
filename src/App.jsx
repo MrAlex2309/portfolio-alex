@@ -4,6 +4,7 @@ import Starter from './page/Start/starter'
 import AboutMe from './page/AboutMe/AboutMe'
 import HomePage from './page/Home/HomePage'
 
+
 const bgImage = {
   backgroundSize:'cover',
   height:'100vh',
