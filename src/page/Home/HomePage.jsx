@@ -12,6 +12,25 @@ import { IoIosPeople } from "react-icons/io";
 
 function HomePage() {
 
+  const [permission, setPermission] = useState(Notification.permission);
+
+  useEffect(() => {
+    if ("Notification" in window && permission !== "granted") {
+      Notification.requestPermission().then(setPermission);
+    }
+  }, []);
+
+  const handleClick = () => {
+    if ("Notification" in window && permission === "granted") {
+      new Notification("Hello from PWA!", {
+        body: "This is a local notification.",
+        icon: "/pwa-192x192.png", // Make sure this exists in /public
+      });
+    } else {
+      alert("Please allow notification permission first.");
+    }
+  };
+
     const bgImage = {
       backgroundSize:'cover',
       height:'100vh',
@@ -51,16 +70,8 @@ function HomePage() {
                 <p className='border rounded-3 bg-white mb-0' style={{padding:'2px'}}>JUN</p>
                 <p className='mb-0 text-center text-white fw-bold'>4</p>
               </div>
-              <button className='btn btn-white border rounded-circle p-2 position-relative shadow bg-white' style={{width:'70px'}} onClick={()=>{
-                if ('Notification' in window && 'serviceWorker' in navigator) {
-    Notification.requestPermission().then(permission => {
-      if (permission === 'granted') {
-        new Notification("Hello world")
-      } else {
-        console.log("Notifications permission denied.");
-      }
-    });
-  }
+              <button className='btn btn-white border rounded-circle p-2 position-relative shadow bg-white' style={{width:'70px'}} onClick={()=>{    
+
               }}>
                 <MdOutlineTouchApp className='position-absolute top-50 start-50 translate-middle text-success' style={{fontSize:"40px"}}/>
               </button>
