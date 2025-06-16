@@ -34,7 +34,7 @@ function HomePage() {
       Notification.requestPermission().then(permission=>{
         if(permission === "granted"){
           navigator.serviceWorker.ready.then(reg=>
-            reg.showNotification('Hello!',{tag: "uniqueTag"})
+            reg.showNotification('Hello!',{tag: uniqueTag})
           )
         }
       })
