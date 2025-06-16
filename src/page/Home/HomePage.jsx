@@ -9,7 +9,7 @@ import { CiViewTable } from "react-icons/ci";
 import { PiListPlusBold } from "react-icons/pi";
 import { SlEnvelopeOpen } from "react-icons/sl";
 import { IoIosPeople } from "react-icons/io";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function HomePage() {
 
