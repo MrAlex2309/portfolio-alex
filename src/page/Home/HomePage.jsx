@@ -34,10 +34,7 @@ function HomePage() {
       Notification.requestPermission().then(permission=>{
         if(permission === "granted"){
           navigator.serviceWorker.ready.then(reg=>
-            reg.showNotification('Hello!', {
-        body: 'From service worker 🎉',
-        icon: '/pwa-192x192.png'
-      })
+            reg.showNotification('Hello!',{renotify: true})
           )
         }
       })
