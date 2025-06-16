@@ -22,13 +22,16 @@ function HomePage() {
   }, []);
 
   const handleClick = () => {
-    if ("Notification" in window && permission === "granted") {
-      new Notification("Hello from PWA!", {
-        body: "This is a local notification.",
-        icon: "/pwa-192x192.png", // Make sure this exists in /public
-      });
-    } else {
-      alert("Please allow notification permission first.");
+    // if ("Notification" in window && permission === "granted") {
+    //   new Notification("Hello from PWA!", {
+    //     body: "This is a local notification.",
+    //     icon: "/pwa-192x192.png", // Make sure this exists in /public
+    //   });
+    // } else {
+    //   alert("Please allow notification permission first.");
+    // }
+    if("Notification" in window && Notification.permission !== "granted"){
+      Notification.requestPermission().then(permission=>)
     }
   };
 
