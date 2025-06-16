@@ -33,10 +33,9 @@ function HomePage() {
     if("Notification" in window && Notification.permission !== "granted"){
       Notification.requestPermission().then(permission=>{
         if(permission === "granted"){
-          new Notification("Hello from PWA!", {
-        body: "This is a local notification.",
-        icon: "/pwa-192x192.png", // Make sure this exists in /public
-      });
+          navigator.serviceWorker.ready.then(reg=>
+            reg.showNotification()
+          )
         }
       })
     }
