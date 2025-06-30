@@ -30,13 +30,14 @@ function HomePage() {
     // } else {
     //   alert("Please allow notification permission first.");
     // }
-    if("Notification" in window && Notification.permission !== "granted"){
-      Notification.requestPermission().then(permission=>{
-        const uniqueTag = 'vibration-sample-' + Date.now();
+    if(!("Notification" in window)){
+      alert("This browser does not support desktop notification");
+    } else if(Notification.permission === "granted"){
+      const notification = new Notification("Hi there!");
+    } else if(Notification.permission === "denied" || Notification.permission === "default"){
+      Notification.requestPermission().then((permission)=>{
         if(permission === "granted"){
-          new Notification("Hi There",{
-            tag:"Hello"+Date.now()
-          })
+          const notification = new Notification("Hi there!");
         }
       })
     }
